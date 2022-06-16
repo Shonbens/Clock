@@ -14,12 +14,17 @@ def update_time():
     am_pm = time.strftime('%p')
     set_time = hours + ':' + minutes + ':' + seconds + ' ' + am_pm
     clock_lbl.config(text=set_time)
+    clock_lbl.after(1000, update_time)
 
 #Clock label and call. 
 clock_lbl = ui.Label(window, text='00:00:00', font='Arial 90 bold', fg='lime')
 clock_lbl.pack()
 
+
+update_time()
+
 #Calls the Window.
 window.mainloop()
+
 
 
